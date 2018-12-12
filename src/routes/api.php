@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Predictions
+Route::get('predictions', 'PredictionsController@index');
+Route::get('predictions/{id}', 'PredictionsController@show');
+//Data Set Predictions
+Route::get('dataset', 'DataSetPredictionsController@index');
+Route::get('dataset/{id}', 'DataSetPredictionsController@show');
